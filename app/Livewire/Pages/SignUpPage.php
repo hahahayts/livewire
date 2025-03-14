@@ -2,9 +2,11 @@
 
 namespace App\Livewire\Pages;
 
+use App\Mail\Welcome;
 use App\Models\User;
-use Livewire\Attributes\Validate; 
+use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class SignUpPage extends Component
@@ -36,7 +38,8 @@ class SignUpPage extends Component
         ]);
 
         Auth::login($user);
-        return redirect('/account')->with('success', 'Registration successful!'); 
+        Mail::to('jojehterce@gmail.com')->send(new Welcome());
+        return redirect('/account')->with('success', 'Registration successful!');
     }
 
 
