@@ -6,9 +6,11 @@ use App\Livewire\Pages\SignUpPage;
 use App\Livewire\Pages\AccountPage;
 use Illuminate\Support\Facades\Route;
 
+
+
 Route::middleware(['guest'])->group(function(){
     Route::get('/', HomePage::class)->name('landing-page');
-    Route::get('/login', LoginPage::class)->name('login');
+    Route::get('/login', LoginPage::class)->name('login')->name('login');
     Route::get('/register', SignUpPage::class)->name('register');
 });
 

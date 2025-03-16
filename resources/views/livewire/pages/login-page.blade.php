@@ -11,8 +11,7 @@
             <input type="text" name="email" wire:model='email' 
             class="@error('email') border-red-500 @enderror"
             >
-            <span>@error('email') <span class="error">{{ $message }}</span> @enderror 
-           </span>
+            
          </div>
 
          <div class="inputs">
@@ -20,12 +19,17 @@
          <input type="password" name="password" wire:model='password'
          class="@error('password') border-red-500 @enderror"
          >
-         <span>@error('password') <span class="error">{{ $message }}</span> @enderror 
-         </span>
+        
          </div>
 
-         <button type="submit" class="login-register-btn">Log in</button>
+         <button type="submit" class="login-register-btn">
+
+            <span wire:loading.class='hidden' >Login</span>
+         <div wire:loading.delay  class="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full mx-auto animate-spin"></div>
+         </button>       
       </form>
+      <span>@error('email') <span class="error">{{ $message }}</span> @enderror 
+   </span>
 
       <p class="text-sm text-center">Dont have an account? <a href="/register" wire:navigate class="hover:text-teal-700 ">Register</a></p>
    </div>

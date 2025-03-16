@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>    Welcome to PetCare.ph
+    <h1>    Welcome to PetCare.ph {{ $user->first_name }} {{ $user->last_name }}
     </h1>
 </body>
 </html>

@@ -13,12 +13,14 @@ class Welcome extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $user;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,7 +30,7 @@ class Welcome extends Mailable
     {
         return new Envelope(
             subject: 'Welcome to PetCare.ph',
-            from:'jericpolison@gmail.com'
+            from:'jericpolison@gmail.com',
         );
     }
 
@@ -39,6 +41,7 @@ class Welcome extends Mailable
     {
         return new Content(
             view: 'mail.welcome',
+            with:['user' => $this->user]
         );
     }
 

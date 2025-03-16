@@ -9,9 +9,6 @@ use Livewire\Component;
 class LoginPage extends Component
 {
 
- 
-
-
     #[Validate('required|email')]
     public $email = '';
 

@@ -38,7 +38,7 @@ class SignUpPage extends Component
         ]);
 
         Auth::login($user);
-        Mail::to('jojehterce@gmail.com')->send(new Welcome());
+        Mail::to('jojehterce@gmail.com')->send(new Welcome($user));
         return redirect('/account')->with('success', 'Registration successful!');
     }
 

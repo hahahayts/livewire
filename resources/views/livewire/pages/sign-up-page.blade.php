@@ -44,7 +44,11 @@
           </span>
           </div>
 
-          <button type="submit" class="login-register-btn">Sign up</button>
+          <button type="submit" class="login-register-btn">
+            
+            <span wire:loading.class='hidden' >Sign up</span>
+         <div wire:loading  class="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full mx-auto animate-spin"></div>
+          </button>
        </form>
 
        <p class="text-sm text-center">Have an account? <a href="/login" wire:navigate class="hover:text-teal-700 ">Login</a></p>
