@@ -12,6 +12,10 @@
 
     </head>
     <body class="bg-slate-200">
+        @if (request()->routeIs('verify-email'))
+
+        <livewire:pages.verify-email />        
+        @else
         <header class="py-4 px-2">
             <nav class="mr-2">
                 <div class="flex justify-between items-center">
@@ -78,6 +82,9 @@
         <main>
             {{ $slot }}   
         </main>
+      
+         @endif
+         
 
         @livewireScripts
     </body>

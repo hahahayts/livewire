@@ -30,7 +30,6 @@ class Welcome extends Mailable
     {
         return new Envelope(
             subject: 'Welcome to PetCare.ph',
-            from:'jericpolison@gmail.com',
         );
     }
 

@@ -37,9 +37,9 @@ class SignUpPage extends Component
             'password' => bcrypt($validatedData['password']),
         ]);
 
-        Auth::login($user);
-        Mail::to('jojehterce@gmail.com')->send(new Welcome($user));
-        return redirect('/account')->with('success', 'Registration successful!');
+        // Auth::login($user);
+        Mail::to($user->email)->send(new Welcome($user));
+        return redirect("/verify-email/{$user->id}")->with('success', 'Registration successful!');
     }
 
 
