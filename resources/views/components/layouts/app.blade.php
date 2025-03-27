@@ -13,8 +13,10 @@
     </head>
     <body class="bg-slate-200">
         @if (request()->routeIs('verify-email'))
-
-        <livewire:pages.verify-email />        
+        <livewire:pages.verify-email />  
+        
+        @elseif (request()->routeIs('verified'))    
+        <livewire:pages.verified />
         @else
         <header class="py-4 px-2">
             <nav class="mr-2">
@@ -77,15 +79,11 @@
                 @livewire('auth-nav')
             @endauth
             </nav>     
-        </header>
-     
+        </header> 
         <main>
             {{ $slot }}   
         </main>
-      
          @endif
-         
-
         @livewireScripts
     </body>
 </html>

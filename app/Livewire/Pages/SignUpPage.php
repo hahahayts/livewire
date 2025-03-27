@@ -7,6 +7,7 @@ use App\Models\User;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class SignUpPage extends Component
@@ -35,11 +36,12 @@ class SignUpPage extends Component
             'lastname' => $validatedData['lastname'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
+            'remember_token' => Str::random(64),
         ]);
 
         // Auth::login($user);
         Mail::to($user->email)->send(new Welcome($user));
-        return redirect("/verify-email/{$user->id}")->with('success', 'Registration successful!');
+        return redirect("/verify-email/{$user->remember_token}")->with('success', 'Registration successful!');
     }
 
 

@@ -20,5 +20,11 @@
                 Please check your inbox and follow the instructions to verify your account.
             </p>
         </div>
+
+        <div class=" inline-block mt-5">
+        <a href="https://mail.google.com/mail/u/0/#inbox" class="hover:text-sky-500 hover:underline ">Click Here</a>
+
+        </div>
+
     </div>
 </div>
