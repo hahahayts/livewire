@@ -26,7 +26,9 @@
 
             <span wire:loading.class='hidden' >Login</span>
          <div wire:loading.delay  class="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full mx-auto animate-spin"></div>
-         </button>       
+         </button>
+         
+         <a href="/forgot-password" class="inline-block  text-sm hover:text-teal-700 " wire:navigate>Forgot Password?</a>
       </form>
       <span>@error('email') <span class="error">{{ $message }}</span> @enderror 
    </span>

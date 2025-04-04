@@ -17,6 +17,9 @@
         
         @elseif (request()->routeIs('verified'))    
         <livewire:pages.verified />
+
+        @elseif (request()->routeIs('show.email.success'))    
+        <livewire:show-email-success />
         @else
         <header class="py-4 px-2">
             <nav class="mr-2">
